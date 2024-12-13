@@ -58,9 +58,9 @@ function setup() {
     1, 1, 0, 0, 0, 0, 0, 1, 1, 
     1, 1, 0, 0, 0, 0, 0, 1, 1, 
     1, 1, 0, 0, 0, 0, 0, 1, 1, 
-    1, 1, 0, 0, 0, 0, 0, 1, 1, 
-    1, 1, 0, 0, 0, 0, 0, 1, 1, 
-    1, 1, 0, 0, 0, 0, 0, 1, 1, 
+    1, 0, 0, 0, 0, 0, 0, 0, 1, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    1, 0, 0, 0, 0, 0, 0, 0, 1, 
     1, 1, 0, 0, 0, 0, 0, 1, 1, 
     1, 1, 0, 0, 0, 0, 0, 1, 1, 
     1, 1, 0, 0, 0, 0, 0, 1, 1, 
@@ -330,8 +330,8 @@ function showTemplate(template) {
 
     spikey1.show = true;
     spikey2.show = true;
-    spikey3.show = false;
-    spikey4.show = false;
+    spikey3.show = true;
+    spikey4.show = true;
     spikey5.show = true;
     spikey6.show = true;
 
@@ -344,8 +344,8 @@ function showTemplate(template) {
     spikey3.x = tileArray[63].x + tileSize/2
     spikey3.y = tileArray[63].y + tileSize/2
 
-    spikey4.x = tileArray[70].x + tileSize/2
-    spikey4.y = tileArray[70].y + tileSize/2
+    spikey4.x = tileArray[71].x + tileSize/2
+    spikey4.y = tileArray[71].y + tileSize/2
 
     spikey5.x = tileArray[127].x + tileSize/2
     spikey5.y = tileArray[127].y + tileSize/2
@@ -359,7 +359,7 @@ case one:
     spikey1.show = false;
     spikey2.show = true;
     spikey3.show = false;
-    spikey4.show = false;
+    spikey4.show = true;
     spikey5.show = false;
     spikey6.show = true;
 
@@ -372,8 +372,8 @@ case one:
     spikey3.x = tileArray[63].x + tileSize/2
     spikey3.y = tileArray[63].y + tileSize/2
 
-    spikey4.x = tileArray[70].x + tileSize/2
-    spikey4.y = tileArray[70].y + tileSize/2
+    spikey4.x = tileArray[71].x + tileSize/2
+    spikey4.y = tileArray[71].y + tileSize/2
 
     spikey5.x = tileArray[127].x + tileSize/2
     spikey5.y = tileArray[127].y + tileSize/2

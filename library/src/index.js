@@ -121,6 +121,10 @@ export function setup(p5Instance, modelURL, _enableDepth, _animationLoopEnabled)
         manualCounter = true;
       }
 
+      if ( pressed.has("ShiftLeft") && pressed.has("KeyP")) {
+        debug = !debug;
+      }
+
     }
   }
 
@@ -307,6 +311,7 @@ export function posterTasks() {
     mainP5Sketch.text("Tracking: " + tracking, screens[0].x + vw, screens[0].y + vh * 5);
     mainP5Sketch.text("Shift - r start record", screens[0].x + vw, screens[0].y + vh * 7);
     mainP5Sketch.text("Shift - s stop record ", screens[0].x + vw, screens[0].y + vh * 8);
+    mainP5Sketch.text("Shift - p stop preview", screens[0].x + vw, screens[0].y + vh * 9);
     mainP5Sketch.noFill();
     mainP5Sketch.stroke(0, 180, 180);
     mainP5Sketch.rectMode(CORNER);

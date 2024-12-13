@@ -18,6 +18,8 @@ import java.util.Collections;
 ControlP5 cp5;
 
 Range range;
+Toggle toggle1;
+Toggle toggle2;
 
 boolean demoAlowed = true;
 boolean editable = false;
@@ -100,7 +102,7 @@ void setup() {
 
 
   // toggle for allowing adjustments with gui
-  cp5.addToggle("toggle")
+ toggle1 = cp5.addToggle("toggle")
     .setPosition(20, height-90)
     .setSize(50, 20)
     .setValue(false)
@@ -108,7 +110,7 @@ void setup() {
     .setCaptionLabel("Allow Edits")
     ;
   // toggle for rgb stream
-  cp5.addToggle("streamRGB")
+ toggle2 = cp5.addToggle("streamRGB")
     .setPosition(100, height-90)
     .setSize(50, 20)
     .setValue(streamRGB)
@@ -420,7 +422,17 @@ void findPositions(PImage depthImage) {
         noFill();
         strokeWeight(4);
         stroke(255, 0, 0);
-        rect(rx, ry, rw, rh);
+        // rect(rx, ry, rw, rh);
+        
+        // scale 
+        float XScale = width/float(WIDTH);
+        float YScale = height/float(HEIGHT);
+        float rxScaled = rx * XScale;
+        float ryScaled = ry * YScale; 
+        float rwScaled = rw * XScale;
+        float rhScaled = rh * YScale;
+        rect(rxScaled, ryScaled, rwScaled, rhScaled);
+        
         text("ID: "+i, rx+10, ry+10);
         //blob center
         // single point
@@ -546,4 +558,10 @@ void animationFrame(PImage frame) {
     frame.pixels[i] = color(fill, fill, fill, 255);
   }
   frame.updatePixels();
+}
+
+void windowResized(){
+  range.setPosition(20, height-40);
+  toggle2.setPosition(100, height-90);
+ toggle1.setPosition(20, height-90); 
 }

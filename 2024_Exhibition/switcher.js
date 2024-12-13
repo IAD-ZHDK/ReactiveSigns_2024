@@ -3,7 +3,7 @@
 let parent = 'Student_Posters/'
 let indexFile = '/index.html'
 let posters = ['Team1', 'Team2', 'Team3', 'Team4', 'Team5', 'Team6', 'Team7']
-
+let defaultPoster = 'PosterDefault';
 // not used: 
 let currentPoster = 0;
 let intervalTime = 240000; //4 minutes 
@@ -109,7 +109,19 @@ function changePoster(posterNo) {
    // clearInterval(incrementCounterInterval);
   //  incrementCounterInterval = setInterval(incrementCounterDown, 2000); // Call incrementCounter every 1000 milliseconds (1 second)
 
+  } else {
+    console.log("changing posters:" + defaultPoster)
+    currentPoster = posterNo;
+    let newPosterURL = parent + '' + defaultPoster + '' + indexFile
+    console.log(newPosterURL);
+    let iframe1 = document.getElementById('screen1');
+    iframe1.src = newPosterURL;
+
+    iframe1.onload = function () {
+      updateIframes();
+    }
   }
+
 }
 
 function incrementCounterDown() {

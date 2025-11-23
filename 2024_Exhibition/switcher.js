@@ -28,10 +28,12 @@ function updateIframes() {
     }
   };
   let iframe1 = document.getElementById('screen1');
-//  let iframe2 = document.getElementById('screen2');
+  let iframe2 = document.getElementById('screen2');
+  let iframe3 = document.getElementById('screen3');
   // Send the object to the iframe
   iframe1.contentWindow.postMessage(message, '*');
- // iframe2.contentWindow.postMessage(message, '*');
+  iframe2.contentWindow.postMessage(message, '*');
+  iframe3.contentWindow.postMessage(message, '*');
 }
 
 function trackingCallback(keyCode) {
@@ -96,15 +98,21 @@ function changePoster(posterNo) {
     console.log(newPosterURL);
     let iframe1 = document.getElementById('screen1');
     iframe1.src = newPosterURL;
-   // let iframe2 = document.getElementById('screen2');
-   // iframe2.src = newPosterURL;
+    let iframe2 = document.getElementById('screen2');
+    iframe2.src = newPosterURL;
+    let iframe3 = document.getElementById('screen3');
+    iframe3.src = newPosterURL;
+
     // add an event when the iframe is loaded
     iframe1.onload = function () {
       updateIframes();
     }
-   // iframe2.onload = function () {
-   //   updateIframes();
-   // }
+    iframe2.onload = function () {
+      updateIframes();
+    }
+    iframe3.onload = function () {
+      updateIframes();
+    }
   // handling counting 
    // clearInterval(incrementCounterInterval);
   //  incrementCounterInterval = setInterval(incrementCounterDown, 2000); // Call incrementCounter every 1000 milliseconds (1 second)
@@ -118,6 +126,12 @@ function changePoster(posterNo) {
     iframe1.src = newPosterURL;
 
     iframe1.onload = function () {
+      updateIframes();
+    }
+    iframe2.onload = function () {
+      updateIframes();
+    } 
+    iframe3.onload = function () {
       updateIframes();
     }
   }

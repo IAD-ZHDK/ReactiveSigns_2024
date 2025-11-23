@@ -67,7 +67,6 @@ export function setup(p5Instance, modelURL, _enableDepth, _animationLoopEnabled)
   correctAspectRatio();
   mainP5Sketch = p5Instance;
   mainP5Sketch.mousePressed = function () {
-
     if (mouseButton === LEFT) {
       if (mainP5Sketch.mouseX > 0 && mainP5Sketch.mouseY > 0 && mainP5Sketch.mouseX < width && mainP5Sketch.mouseY < height) {
         openFullscreen();
@@ -107,9 +106,7 @@ export function setup(p5Instance, modelURL, _enableDepth, _animationLoopEnabled)
       if (pressed.has("Shift") || pressed.has("ShiftLeft") && pressed.has("KeyS") && recording) {
         stopRecordCanvas();
       }
-
       // handle counter 
-
       if (pressed.has("ArrowUp")) {
         // cancel incrementCounter interval and increase counter by 1
         clearInterval(incrementCounterInterval);
@@ -342,7 +339,6 @@ export function posterTasks() {
     showWebCamPreview(false);
   }
   // show light animation when no one is infront of the camera
-
 
 
 }
